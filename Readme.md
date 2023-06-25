@@ -1,3 +1,5 @@
+## Part One
+
 Each rucksack has two large compartments. All items of a given type are meant to go into exactly one of the two compartments. The Elf that did the packing failed to follow this rule for exactly one item type per rucksack.
 
 The Elves have made a list of all of the items currently in each rucksack (your puzzle input), but they need your help finding the errors. Every item type is identified by a single lowercase or uppercase letter (that is, a and A refer to different types of items).
@@ -26,7 +28,8 @@ In the above example, the priority of the item type that appears in both compart
 
 Find the item type that appears in both compartments of each rucksack. What is the sum of the priorities of those item types?
 
---- Part Two ---
+## Part Two
+
 As you finish identifying the misplaced items, the Elves come to you with another issue.
 
 For safety, the Elves are divided into groups of three. Every Elf carries a badge that identifies their group. For efficiency, within each group of three Elves, the badge is the only item type carried by all three Elves. That is, if a group's badge is item type B, then all three Elves will have item type B somewhere in their rucksack, and at most two of the Elves will be carrying any other item type.
@@ -50,3 +53,8 @@ In the first group, the only item type that appears in all three rucksacks is lo
 Priorities for these items must still be found to organize the sticker attachment efforts: here, they are 18 (r) for the first group and 52 (Z) for the second group. The sum of these is 70.
 
 Find the item type that corresponds to the badges of each three-Elf group. What is the sum of the priorities of those item types?
+
+## Answers:
+
+Answer of part 1 is: 7817
+Answer of part 2 is: 2444

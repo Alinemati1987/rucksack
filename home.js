@@ -1,22 +1,27 @@
-const { input } = require("./input.js");
+// const { input } = require("./input.js");
+const fs = require("fs");
 
-const test = `
-vJrwpWtwJgWrhcsFMMfFFhFp
-jqHRNqRjqzjGDLGLrsFMfFZSrLrFZsSL
-PmmdzqPrVvPwwTWBwg
-wMqvLMZHhHMvwLHjbvcjnnSBnvTQFn
-ttgJtRGJQctTZtZT
-CrZsJsPPZsGzwwsLwLmpwMDw
-`;
+// Main //
 
-const lines = input.trim().split("\n");
-const priority = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-let prioritySum = 0;
+function main() {
+  const priority = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-// partOne();
-partTwo();
+  const lines = getData();
+  partOne(priority, lines);
+  partTwo(priority, lines);
+}
 
-function partOne() {
+// Functions //
+
+function getData() {
+  const allLines = fs.readFileSync("./input.txt").toString();
+  const seprateLines = allLines.split("\n");
+  return seprateLines;
+}
+
+function partOne(priority, lines) {
+  let prioritySum = 0;
+
   lines.forEach((line) => {
     const lineLength = line.length;
     let partLength = Math.floor(lineLength / 2);
@@ -38,11 +43,12 @@ function partOne() {
     });
   });
 
-  console.log("The priorities sum is: " + prioritySum);
+  console.log("The priorities sum for part One is: " + prioritySum);
 }
 
-function partTwo() {
+function partTwo(priority, lines) {
   var groups = [];
+  let prioritySum = 0;
 
   for (let i = 0; i < lines.length; i += 3) {
     let slices = lines.slice(i, i + 3);
@@ -72,5 +78,9 @@ function partTwo() {
     });
   });
 
-  console.log("The priorities sum is: " + prioritySum);
+  console.log("The priorities sum for part TWO is: " + prioritySum);
 }
+
+// Run the script //
+
+main();
